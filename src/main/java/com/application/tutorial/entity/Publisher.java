@@ -19,9 +19,14 @@ public class Publisher
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", length = 50, nullable = false, unique = true)
+    @Column(name = "name", length = 50, nullable = false)
     private String name;
 
     @ManyToMany(mappedBy = "publishers", cascade = { CascadeType.ALL })
     private Set<Book> books = new HashSet<Book>();
+
+    public Publisher(String name)
+    {
+        this.name = name;
+    }
 }

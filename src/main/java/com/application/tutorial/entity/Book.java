@@ -79,4 +79,11 @@ public class Book
         this.publishers.add(publisher);
         publisher.getBooks().add(this);
     }
+
+    public Book(String isbn, String name, String description)
+    {
+        this.isbn = isbn;
+        this.name = name;
+        this.description = description;
+    }
 }
